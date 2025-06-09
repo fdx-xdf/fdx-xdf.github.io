@@ -106,7 +106,6 @@
 <li>系统服务以 SYSTEM 身份连接你指定的 DCOM 管道（或 RPC 接口）；</li>
 </ol>
 </blockquote>
-<p>‍</p>
 <p>我们调用 <code>CoGetInstanceFromIStorage</code>​ 这个 api 远程激活某个 COM 对象，在利用中，通过指定恶意代理地址（可以是本地自己启动的 RPC 代理服务）来劫持这个认证过程。在原作者的 demo 中使用的 COM 对象为 BITS，CLSID 为 <code>{4991d34b-80a1-4291-83b6-3328366b9097}</code>​。</p>
 <h4>DCOM 向代理发送 NTLM 协商包</h4>
 <p>当 SYSTEM 身份的进程尝试连接到远程服务时，会发起 NTLM_NEGOTIATE ，而 NTLM_NEGOTIATE 是 NTLM 握手的第一步。</p>
@@ -130,7 +129,6 @@
 <pre><code class="language-c#">// Use a known local system service COM server, in this cast BITSv1
 Guid clsid = new Guid(&quot;4991d34b-80a1-4291-83b6-3328366b9097&quot;);
 </code></pre>
-<p>‍</p>
 <p>但是现在发现除了 BITS 之外，还有几个进程外 COM 服务器由可能被滥用的特定 CLSID 标识。他们至少需要：</p>
 <ul>
 <li>可由当前用户实例化，通常是具有模拟权限的服务用户</li>
@@ -194,7 +192,6 @@ Guid clsid = new Guid(&quot;4991d34b-80a1-4291-83b6-3328366b9097&quot;);
 <p>通过构造恶意命名管道，攻击者可以诱导 RPCSS 连接到该管道，触发本地回环认证，进而获取 SYSTEM 权限的令牌。</p>
 </li>
 </ul>
-<p>‍</p>
 <p>利用流程图：</p>
 <p><img src="https://raw.githubusercontent.com/fdx-xdf/md_images/master/siyuan_img/image-20250605112643-ybtqwaf.png" alt="image" /></p>
 <p>再偷一个 project zero 的图：</p>
