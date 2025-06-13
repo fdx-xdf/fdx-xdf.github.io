@@ -8,7 +8,7 @@ published: true
 
 
 
-
+# srdi-rs项目学习
 
 本篇文章对 [memN0ps/venom-rs: Rusty Injection - Shellcode Reflective DLL Injection (sRDI) in Rust](https://github.com/memN0ps/venom-rs) 进行分析学习，该项目完成了 rust 下 rdi 的实现，在写 c2 的时候有一定的参考意义。
 
@@ -202,3 +202,5 @@ x64dbg下看bootstrap：
 经过优化可达到bypass pe-sive的效果：
 
 ![82216cb6e7801822d61bdd009518ed5a](https://raw.githubusercontent.com/fdx-xdf/md_images/master/siyuan_img/82216cb6e7801822d61bdd009518ed5a-20250603142108-w1aaxas.png)
+
+‍
