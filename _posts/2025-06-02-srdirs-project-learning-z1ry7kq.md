@@ -183,9 +183,9 @@ End Bootstrap之后继续构造shellcode，后面分别添加上loader、payload
     shellcode.append(&mut parameter_value.as_bytes().to_vec());
 ```
 
-x86下看bootstrap：
+x64dbg下看bootstrap：
 
-![](https://cdn.nlark.com/yuque/0/2024/png/40360538/1719661787005-d85880a1-0a74-474e-8fa1-e5a54098c662.png)
+![](https://raw.githubusercontent.com/fdx-xdf/md_images/master/siyuan_img/1719661787005-d85880a1-0a74-474e-8fa1-e5a54098c662.png)
 
 最后整体布局如下：
 
