@@ -4,6 +4,11 @@ date: '2025-06-02 21:16:34'
 permalink: /post/srdirs-project-learning-z1ry7kq.html
 layout: post
 published: true
+categories:
+  - 工具开发
+tags:
+  - shellcode
+  - 安全工具
 ---
 
 
