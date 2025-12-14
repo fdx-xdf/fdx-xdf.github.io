@@ -71,7 +71,7 @@ $$
 
 用一个图来表示卷积的操作：
 
-![image](http://127.0.0.1:56906/assets/image-20251213162535-ov1fz5x.png)
+![image](https://raw.githubusercontent.com/fdx-xdf/md_images/master/siyuan_img/image-20251213162535-ov1fz5x.png)
 
 简单来说就是不断的使用卷积核在图像上进行滑动，从而捕捉图像局部的特征。代码实现如下：
 
@@ -253,7 +253,7 @@ o_full.shape = torch.Size([1, 1, 15, 15])
 
 步幅越大，输出的尺寸越小，降低了特征图的分辨率，也减少了计算量和内存消耗，有助于去冗余和提取更高层次的特征。
 
-![stride](http://127.0.0.1:56906/assets/stride-20251213171041-fipirnz.gif)
+![stride](https://raw.githubusercontent.com/fdx-xdf/md_images/master/siyuan_img/stride-20251213171041-fipirnz.gif)
 
 实现也很简单,`‍nn.Conv2d(IN_CHANNELS, OUT_CHANNELS, KERNEL_SIZE, STRIDE, padding_vali)(i)`​ ​中 `STRIDE` ​即为该超参数。
 
@@ -271,7 +271,7 @@ o_full.shape = torch.Size([1, 1, 15, 15])
 
 为了分别在各个通道上执行卷积（互相关）操作，当数据以多通道的形式输入时，卷积核的通道数应与输入数据的通道数一致。这样，计算得到 3 维结果的形状为 $c_{in} \times h' \times w'$。为了保证每个卷积核只生成一个 2 维的特征图，需要将 3 维结果中的每个通道按元素求和后输出。下面是一个双通道输入的例子：
 
-![image](http://127.0.0.1:56906/assets/image-20251213210305-hbn7htl.png)
+![image](https://raw.githubusercontent.com/fdx-xdf/md_images/master/siyuan_img/image-20251213210305-hbn7htl.png)
 
 代码实现：
 
@@ -320,7 +320,7 @@ tensor([[[ 56.,  72.],
 
 以 3 通道输入、2 通道输出的 1×1 卷积层，计算示意图如下：
 
-![image](http://127.0.0.1:56906/assets/image-20251213213320-6xblcxm.png)
+![image](https://raw.githubusercontent.com/fdx-xdf/md_images/master/siyuan_img/image-20251213213320-6xblcxm.png)
 
 1×1 卷积层的主要作用如下：
 
@@ -369,7 +369,7 @@ def corr2d_multi_in_out_1x1(X, K):
 - **最大池化 (max-pooling)**  层：汇聚将每个池化窗口的最大值作为新的特征图；
 - **平均池化 (average-pooling)**  层：汇聚将每个池化窗口的平均值作为新的特征图。
 
-![pooling](http://127.0.0.1:56906/assets/pooling-20251213213827-d2gze43.gif)
+![pooling](https://raw.githubusercontent.com/fdx-xdf/md_images/master/siyuan_img/pooling-20251213213827-d2gze43.gif)
 
 代码实现也很简单：
 
