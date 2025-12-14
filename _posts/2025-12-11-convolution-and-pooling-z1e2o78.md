@@ -1,11 +1,13 @@
 ---
-title: 卷积与池化
+title: ai学习：卷积与池化
 date: '2025-12-11 17:45:59'
 permalink: /post/convolution-and-pooling-z1e2o78.html
 tags:
   - ai
   - 卷积
   - 池化
+categories:
+  - 动手学深度学习
 layout: post
 published: true
 ---
