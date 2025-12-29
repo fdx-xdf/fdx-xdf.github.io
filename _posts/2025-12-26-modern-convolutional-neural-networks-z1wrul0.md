@@ -2,6 +2,7 @@
 title: ai学习：现代卷积神经网络
 date: '2025-12-26 18:25:45'
 permalink: /post/modern-convolutional-neural-networks-z1wrul0.html
+math: true
 tags:
   - ai
   - 卷积
